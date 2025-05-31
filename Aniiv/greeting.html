@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>"Leche!"</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .lines {
+      margin: 2rem auto;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      font-size: 1.2rem;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem auto;
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 250px;
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .music {
+      margin-top: 2rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    /* Popup Styles */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: white;
+      color: #333;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .popup-content h2 {
+      margin-top: 0;
+    }
+    .popup-content button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #ff7e91;
+      color: white;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .popup-content button:hover {
+      background: #ff4f6d;
+    }
+  </style>
+</head>
+<body>
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>Hi Baby 💖</h2>
+      <p>I made this just for you — thank you for being my everything. Happy anniversary! 💌</p>
+      <button onclick="closePopup()">Awww 🥺</button>
+    </div>
+  </div>
+
+  <header>
+    <h1>Happy Anniversary Baby 💖</h1>
+    <p>To the most wonderful person in my life</p>
+  </header>
+
+  <div class="lines" id="sweet-lines">
+    <!-- Sweet lines will be inserted here -->
+  </div>
+
+  <div class="gallery">
+    <img src="1.jpg" alt="Couple 1">
+    <img src="2.jpg" alt="Couple 2">
+    <img src="3.jpg" alt="Couple 3">
+    <img src="4.jpg" alt="Couple 4">
+  </div>
+
+  <div class="music">
+    <p>🎶 Playing: Love – Bensound</p>
+    <audio controls autoplay loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+
+  <footer>
+    Made with 💘 by Gian
+  </footer>
+
+  <script>
+    const sweetLines = [
+      "Every day with you feels like a dream come true.",
+      "You make my world brighter just by being in it.",
+      "Loving you is the best thing that ever happened to me.",
+      "Thank you for being my rock, my light, and my love.",
+      "Here's to more laughs, kisses, and memories together."
+    ];
+
+    const linesContainer = document.getElementById('sweet-lines');
+    linesContainer.innerHTML = sweetLines.map(line => `<p>💌 ${line}</p>`).join('');
+
+    // Popup logic
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    // Optional: Automatically close after 10s
+    setTimeout(() => {
+      closePopup();
+    }, 10000);
+  </script>
+</body>
+</html>
